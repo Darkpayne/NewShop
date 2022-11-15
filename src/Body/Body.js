@@ -18,13 +18,13 @@ const Body = () => {
         <section className='bg-black h-full lg:container lg:mx-auto'>
           <Hero/>
         </section>
-        <section className='bg-black h-full '>
+        <section className='bg-black h-full hidden md:block'>
             <Recommend/>
         </section>
         <section>
           <Sponsored/>
         </section>
-        <section>
+        <section className='hidden md:block'>
           <Deals/>
         </section>
         <section>

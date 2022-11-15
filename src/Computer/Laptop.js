@@ -92,10 +92,10 @@ const Laptop = () => {
     }
   return (
     <div>
-        <div className="grid xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-2 gap-2 my-8 p-5">
+        <div className="grid xl:grid-cols-5 lg:grid-cols-3 grid-cols-2 gap-2 my-8 p-5">
             {
               products.map((data)=>(
-                <div key={data.id} className="bg-white rounded hover:shadow-2xl p-5 duration-500 transition-all cursor-pointer">
+                <div key={data.id} className="bg-white place-items-center rounded hover:shadow-2xl p-5 duration-500 transition-all cursor-pointer">
                   <div className=" flex justify-center items-center relative">
                   <Link to={`/product/${data.id}`}>
                     <img src={data.src} alt="" className='w-48 m-1' />
@@ -110,9 +110,9 @@ const Laptop = () => {
                         <h2 className='font-medium m-3'>{data.title}</h2>
                       </div>
                       <div className="border-b">
-                        <div className='flex justify-between items-center m-3'>
-                        <p className="font-bold text-xl">{formatCurrency(data.price)}</p>
-                        {data.dp && <p className="line-through font-thin text-xs">{formatCurrency(data.dp)}</p>}
+                        <div className='lg:flex justify-between items-center m-3'>
+                          <p className="font-bold text-xl">{formatCurrency(data.price)}</p>
+                          {data.dp && <p className="line-through font-thin text-xs">{formatCurrency(data.dp)}</p>}
                         </div>
                         
                       </div>

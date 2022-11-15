@@ -17,7 +17,7 @@ const Navigation = () => {
             name:"Other Categories"},
     ]
   return (
-    <nav>
+    <nav className='overflow-hidden'>
         <div className="lg:container lg:mx-auto">
            <ul className="flex text-white justify-around">
            <li className='shrink-0 p-1 text-sm  py-2 hover:bg-white hover:text-pink-600 cursor-pointer'><Link to="/">All Categories  <span className=''>

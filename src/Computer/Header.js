@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <div className='lg:container lg:mx-auto'>
+    <div className='lg:container lg:mx-auto hidden md:block'>
         <div className="flex justify-between m-3 mb-7">
             <nav class="flex" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-3">

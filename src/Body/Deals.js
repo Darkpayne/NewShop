@@ -16,7 +16,7 @@ const Deals = () => {
                 <h1 className='mr-8 font-bold text-xl'>Today's Deals</h1> <p className='hover:underline cursor-pointer text-pink-400'>See All Items</p>
             </div>
        
-            <div className="grid grid-cols-3 gap-3 my-5 p-3 px-6 ">
+            <div className="grid grid-cols-3 gap-3 my-5 p-3 px-6">
                {
                    Deals.map((item,index)=>(
                        <div  className="flex items-center shadow hover:shadow-lg p-5 hover:-translate-y-1 duration-500 cursor-pointer">

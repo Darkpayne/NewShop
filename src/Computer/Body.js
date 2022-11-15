@@ -9,8 +9,8 @@ const Body = () => {
     }
   return (
     <section className='lg:container lg:mx-auto'>
-        <div className="flex ">
-            <div className="my-4 sm:basis-1/4 lg:basis-1/6 flex-shrink-0 flex-row mx-2">
+        <div className="flex items-center justify-center">
+            <div className="my-4 sm:basis-1/4 lg:basis-1/6 flex-shrink-0 flex-row mx-2 hidden ">
                 {/* Number 1 */}
                 <div className="relative overflow-hidden ">
                     <input type="checkbox"

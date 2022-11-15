@@ -18,9 +18,14 @@ const Cart = () => {
 
    
   return (
-    <div>
+    <div className='min-h-screen bg-gray-200 '>
         <MainNav />
         <Header />
+
+        <div className="flex justify-between px-5 bg-gray-200 lg:hidden py-5 font-semibold">
+            <p>Subtotal ({cartItem.length} Item )</p>
+            <p>{formatCurrency(total)}</p>
+        </div>
 
         <section className='bg-gray-200'>
             <div className="lg:container lg:mx-auto">
@@ -37,12 +42,12 @@ const Cart = () => {
                     <div className="">
                         <img src="https://www-konga-com-res.cloudinary.com/image/upload/w_auto,f_auto,fl_lossy,dpr_auto,q_auto/v1651851574/contentservice/access.png_rJ64Z6MUc.png" alt="" className=' '/>
                     </div>
-                <div className="flex lg:justify-between justify-center ">
+                <div className="flex lg:justify-between justify-center px-2">
                     <div className="lg:basis-3/4 flex-auto">
                        
                         <div className='py-7'>
                             <div className="">
-                                <div className="grid grid-cols-6 p-3 bg-gray-300 rounded">
+                                <div className="md:grid grid-cols-6 p-3 bg-gray-300 rounded hidden ">
                                     <div className="col-span-3">
                                         <p>Items Detail</p>
                                     </div>
@@ -60,7 +65,7 @@ const Cart = () => {
                                 </div>
                             </div>
                             {/* items */}
-                        <div className='bg-white '>
+                        <div className='bg-white hidden md:block'>
                         {cartItem.length === 0 && <div className='col-span-6 text-center text-3xl p-3'>Your Cart is Empty</div>}
                         {
                             cartItem.map((item)=>{
@@ -113,7 +118,51 @@ const Cart = () => {
                             )})
                         }
                             {/* items end */}
-                            </div>
+                        </div>
+                            {/* items */}
+                        <div className='bg-white block md:hidden border'>
+                        {cartItem.length === 0 && <div className='col-span-6 text-center text-3xl p-3'>Your Cart is Empty</div>}
+                        {
+                            cartItem.map((item)=>{
+                               const {id,src,title,qty,sold,price} = item
+                               return (
+                                <div className="p-2" key={id} >
+                                    <div className="flex space-x-5">
+                                        <img src={src} alt="" className='h-24' />
+                                        <div className="">
+                                            <h1>{title}</h1>
+                                            <p>sold by {sold}</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex space-x-5">
+                                       
+                                            <div className="flex items-center my-5 flex-shrink-0 flex-col">
+                                                <p className='text-sm self-start mb-1'>Quality : </p>
+                                                <div className="border border-gray-300 rounded shadow-lg text-gray-400">
+                                                <button  onClick={()=>{
+                                                    dispatch({type: "DECREMENT_ITEM", payload:item})
+                                                }} className='p-1 px-2 border-r'>
+                                                    <ion-icon name="remove-outline" ></ion-icon>
+                                                </button>
+                                                <span className=' p-1  px-4'>{qty}</span>
+                                                <button onClick={()=>{
+                                                    dispatch({type: "INCREMENT_ITEM", payload:item})
+                                                }} className='p-1 px-2 border-l'>
+                                                    <ion-icon name="add-outline"></ion-icon>
+                                                </button>
+                                                </div>
+                                            </div>
+                                            <div className="my-2 py-2">
+                                            <p className='text-lg font-medium'>{formatCurrency(price)}</p>
+                                            <p className='text-xs text-gray-400 font-medium'>{formatCurrency(price)} x {item.qty} item</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            )})
+                        }
+                            {/* items end */}
+                        </div>
+
                         </div>
                     </div>
                     <div className="lg:basis-1/4 lg:block hidden">
@@ -159,14 +208,14 @@ const Cart = () => {
             </div>
         </section>
             
-        <Footer />
+        <button className='w-full lg:hidden bg-green-500 p-1 py-2 rounded fixed bottom-2 text-white uppercase'>continue to checkout</button>
     </div>
   )
 }
 
 const Header = () => {
     return (
-      <div className='lg:container lg:mx-auto'>
+      <div className='lg:container lg:mx-auto bg-white md:bg-gray-200 py-5 md:py-0'>
           <div className="flex justify-between m-3 p-2">
               <nav class="flex" aria-label="Breadcrumb">
               <ol class="inline-flex items-center space-x-1 md:space-x-3">

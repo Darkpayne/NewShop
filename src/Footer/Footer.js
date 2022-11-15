@@ -71,10 +71,10 @@ let Footer = [
 const Links = () => {
     
     return (
-        <div>
+        <div className='overflow-hidden hidden md:block'>
            <div className="lg:container lg:mx-auto">
                <div className="flex flex-row p-5">
-                   <div className="flex-auto grid lg:grid-cols-5 grid-cols-4 gap-2">
+                   <div className="flex-auto grid lg:grid-cols-5 md:grid-cols-4 gap-2 grid-cols-2">
                        <div className="text-gray-300">
                            <h2 className='text-sm font-medium'>ABOUT KONGA</h2>
                            <ul className='text-sm text-gray-500'>

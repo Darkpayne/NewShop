@@ -34,12 +34,12 @@ const Product = () => {
                             
         </button>
         </Link>
-              <div className='flex bg-white p-3 rounded'>
+              <div className='flex bg-white p-3 rounded flex-col md:flex-row'>
               <div className="lg:basis-3/5 md:basis-1/2">
-              <div className="flex justify-center items-center">
-              <img src={src} alt="" className='p-4'/>
+                <div className="flex justify-center items-center">
+                  <img src={src} alt="" className='p-4'/>
+                </div>
               </div>
-            </div>
             
             <div className="lg:basis-2/5 md:basis-1/2">
                 <div className="">
